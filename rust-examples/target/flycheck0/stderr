@@ -1,12 +1,45 @@
-   0.056686010s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint: stale: changed "/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs"
-   0.056708199s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:           (vs) "/home/claire/Desktop/rust-problems/rust-examples/target/debug/.fingerprint/rust-examples-873a719c6b91d8df/dep-bin-factorial"
-   0.056717046s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1787342666, nanos: 148864980 } < FileTime { seconds: 1787342666, nanos: 976866824 }
-   0.056783778s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint: fingerprint dirty for rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples)/Check { test: false }/TargetInner { name: "factorial", doc: true, ..: with_path("/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs", Edition2024) }
-   0.056801520s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/claire/Desktop/rust-problems/rust-examples/target/debug/.fingerprint/rust-examples-873a719c6b91d8df/dep-bin-factorial", reference_mtime: FileTime { seconds: 1787342666, nanos: 148864980 }, stale: "/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs", stale_mtime: FileTime { seconds: 1787342666, nanos: 976866824 } }))
-   0.057248547s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint: stale: changed "/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs"
-   0.057282276s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:           (vs) "/home/claire/Desktop/rust-problems/rust-examples/target/debug/.fingerprint/rust-examples-4a258754d0353d3d/dep-test-bin-factorial"
-   0.057297058s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1787342666, nanos: 148864980 } < FileTime { seconds: 1787342666, nanos: 976866824 }
-   0.057380819s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint: fingerprint dirty for rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples)/Check { test: true }/TargetInner { name: "factorial", doc: true, ..: with_path("/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs", Edition2024) }
-   0.057417894s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="factorial"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/claire/Desktop/rust-problems/rust-examples/target/debug/.fingerprint/rust-examples-4a258754d0353d3d/dep-test-bin-factorial", reference_mtime: FileTime { seconds: 1787342666, nanos: 148864980 }, stale: "/home/claire/Desktop/rust-problems/rust-examples/src/bin/factorial.rs", stale_mtime: FileTime { seconds: 1787342666, nanos: 976866824 } }))
+   0.501473365s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="count_vowels"}: cargo::core::compiler::fingerprint: fingerprint error for rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples)/Check { test: false }/TargetInner { name: "count_vowels", doc: true, ..: with_path("/home/claire/Desktop/rust-problems/rust-examples/src/bin/count_vowels.rs", Edition2024) }
+   0.501658445s  INFO prepare_target{force=false package_id=rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples) target="count_vowels"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/claire/Desktop/rust-problems/rust-examples/target/debug/.fingerprint/rust-examples-2e57cb1c5bfb5e88/bin-count_vowels`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
     Checking rust-examples v0.1.0 (/home/claire/Desktop/rust-problems/rust-examples)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+error: could not compile `rust-examples` (bin "count_vowels") due to 1 previous error
