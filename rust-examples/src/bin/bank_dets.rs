@@ -29,7 +29,7 @@ fn main() {
         balance: 1000.0,
     };
 
-    println!("Initial balance: {}", account.balance);
+    println!("Account: {} Initial balance: {}",account.owner, account.balance);
 
     account.deposit(500.0);
     println!("After deposit: {}", account.balance);
